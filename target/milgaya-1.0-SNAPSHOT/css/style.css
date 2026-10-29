@@ -1,0 +1,367 @@
+/* ==========================================================================
+   Milgaya - Modern Lost & Found Platform Stylesheet
+   ========================================================================== */
+
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-light: #eef2ff;
+    --secondary: #0ea5e9;
+    --lost-accent: #ef4444;
+    --lost-light: #fef2f2;
+    --found-accent: #10b981;
+    --found-light: #ecfdf5;
+    --warning: #f59e0b;
+    --dark: #0f172a;
+    --dark-surface: #1e293b;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --bg-light: #f8fafc;
+    --border-color: #e2e8f0;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --card-hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* --- Brand & Navbar --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.85rem 0;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    color: var(--primary) !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brand-badge {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+}
+
+.nav-link {
+    font-weight: 600;
+    color: #475569 !important;
+    padding: 0.5rem 0.85rem !important;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary) !important;
+    background-color: var(--primary-light);
+}
+
+/* --- Hero Banner --- */
+.hero-section {
+    background: linear-gradient(135deg, #312e81 0%, #4338ca 50%, #6366f1 100%);
+    color: white;
+    padding: 5rem 0 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+}
+
+.hero-title {
+    font-size: 3.25rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 650px;
+}
+
+/* --- Search Bar Container --- */
+.search-banner-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    margin-top: -3.5rem;
+    position: relative;
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* --- Cards & Badges --- */
+.item-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+    border-color: #cbd5e1;
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 200px;
+    background: #f1f5f9;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.item-card:hover .card-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.badge-lost {
+    background-color: var(--lost-accent);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+}
+
+.badge-found {
+    background-color: var(--found-accent);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+}
+
+.badge-resolved {
+    background-color: #64748b;
+    color: white;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+}
+
+.badge-reward {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+}
+
+/* --- Category Pills --- */
+.category-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: var(--text-main);
+    display: block;
+}
+
+.category-card:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    color: var(--primary);
+}
+
+.category-icon {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    background: #f1f5f9;
+    color: var(--primary);
+    border-radius: 12px;
+    margin: 0 auto 0.75rem auto;
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.category-card:hover .category-icon {
+    background: var(--primary);
+    color: white;
+}
+
+/* --- Stats Counters --- */
+.stat-box {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.stat-box:hover {
+    transform: translateY(-4px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Form & Inputs --- */
+.form-control, .form-select {
+    border-radius: 10px;
+    padding: 0.65rem 0.95rem;
+    border: 1.5px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.65rem 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn-lost {
+    background-color: var(--lost-accent);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.65rem 1.25rem;
+    border: none;
+}
+
+.btn-lost:hover {
+    background-color: #dc2626;
+    color: white;
+}
+
+.btn-found {
+    background-color: var(--found-accent);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.65rem 1.25rem;
+    border: none;
+}
+
+.btn-found:hover {
+    background-color: #059669;
+    color: white;
+}
+
+/* --- How it Works Steps --- */
+.step-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+}
+
+.step-num {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 1.35rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem auto;
+    border: 2px solid var(--primary);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark);
+    color: #94a3b8;
+    padding: 4rem 0 2rem 0;
+    border-top: 1px solid #1e293b;
+}
+
+footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #334155;
+    padding-top: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+}

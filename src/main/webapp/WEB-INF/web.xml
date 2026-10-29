@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+   version="6.0">
+    
+    <display-name>Milgaya - Lost and Found Platform</display-name>
+    
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+    <!-- Welcome File -->
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- 1. Home Servlet -->
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <!-- 2. Browse Items Servlet -->
+    <servlet>
+        <servlet-name>BrowseItemsServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.BrowseItemsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BrowseItemsServlet</servlet-name>
+        <url-pattern>/items</url-pattern>
+    </servlet-mapping>
+
+    <!-- 3. Item Detail Servlet -->
+    <servlet>
+        <servlet-name>ItemDetailServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.ItemDetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ItemDetailServlet</servlet-name>
+        <url-pattern>/item</url-pattern>
+    </servlet-mapping>
+
+    <!-- 4. Report Item Servlet -->
+    <servlet>
+        <servlet-name>ReportItemServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.ReportItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReportItemServlet</servlet-name>
+        <url-pattern>/report-lost</url-pattern>
+        <url-pattern>/report-found</url-pattern>
+    </servlet-mapping>
+
+    <!-- 5. Dashboard Servlet -->
+    <servlet>
+        <servlet-name>DashboardServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.DashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DashboardServlet</servlet-name>
+        <url-pattern>/dashboard</url-pattern>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+
+    <!-- 6. Claim Servlet -->
+    <servlet>
+        <servlet-name>ClaimServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.ClaimServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClaimServlet</servlet-name>
+        <url-pattern>/claim</url-pattern>
+    </servlet-mapping>
+
+    <!-- 7. Item Action Servlet -->
+    <servlet>
+        <servlet-name>ItemActionServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.ItemActionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ItemActionServlet</servlet-name>
+        <url-pattern>/item-action</url-pattern>
+    </servlet-mapping>
+
+    <!-- 8. Login Servlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <!-- 9. Register Servlet -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- 10. Logout Servlet -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- 11. Admin Servlet -->
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <!-- 12. About & Contact Servlet -->
+    <servlet>
+        <servlet-name>AboutContactServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.AboutContactServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AboutContactServlet</servlet-name>
+        <url-pattern>/about</url-pattern>
+        <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
+
+    <!-- 13. API Servlet -->
+    <servlet>
+        <servlet-name>ApiServlet</servlet-name>
+        <servlet-class>com.mycompany.milgaya.servlet.ApiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ApiServlet</servlet-name>
+        <url-pattern>/api/items</url-pattern>
+        <url-pattern>/api/stats</url-pattern>
+    </servlet-mapping>
+
+</web-app>
